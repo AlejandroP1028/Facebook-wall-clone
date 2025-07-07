@@ -9,8 +9,8 @@ export const fetchPosts = async (): Promise<Post[]> => {
   const { data, error } = await supabase
     .from("posts")
     .select("*")
-    .order("created_at", { ascending: false }); // change column name if needed
-
+    .order("created_at", { ascending: false })
+    .range(0, 49); // Fetch only the first 50
   if (error) throw new Error(error.message);
   return data as Post[];
 };
