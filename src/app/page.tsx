@@ -1,7 +1,5 @@
-import React from "react";
+import Wall from "@/components/Wall";
 
-const Homepage = () => {
-  return <div>page</div>;
-};
-
-export default Homepage;
+export default function HomePage() {
+  return <Wall />;
+}
