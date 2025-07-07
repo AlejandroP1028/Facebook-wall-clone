@@ -9,7 +9,7 @@ export default function PostCard({ post }: { post: Post }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -20, scale: 0.95 }}
       transition={{ duration: 0.3 }}
-      className="border-b border-gray-300 pb-4"
+      className="border-b border-gray-300 pb-4 mt-4"
     >
       <div className="font-bold text-gray-800">{post.author}</div>
       <div className="text-gray-700 mb-2">{post.message}</div>
@@ -27,7 +27,7 @@ export default function PostCard({ post }: { post: Post }) {
         </div>
       ) : null}
 
-      <div className="text-xs text-gray-500 mb-3">
+      <div className="text-xs text-gray-500 ">
         {new Date(post.created_at).toLocaleString("en-US", {
           month: "short",
           day: "numeric",

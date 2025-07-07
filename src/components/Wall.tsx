@@ -12,22 +12,20 @@ export default function Wall() {
   const { data: posts, loading, error, refetch } = usePosts();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-[#3B5998] text-white px-4 py-2">
         <h1 className="text-lg font-bold">Alejandro&apos;s Wall</h1>
       </header>
 
-      <main className="flex flex-col lg:flex-row max-w-6xl mx-auto">
+      <main className="flex flex-col lg:flex-row max-w-6xl mx-auto ">
         <Sidebar />
 
-        <section className="flex-1 p-4">
+        <section className="flex-1 p-4 bg-white h-screen">
           {/* Post input */}
           <PostInput
             onPost={(newPost) => {
-              // If you want live update:
               refetch();
-              // or optimistically insert: setPosts(prev => [newPost, ...prev])
             }}
           />
 

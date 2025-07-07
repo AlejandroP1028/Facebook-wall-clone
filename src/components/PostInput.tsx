@@ -91,6 +91,8 @@ export default function PostInput({ onPost }: Props) {
           />
         </label>
 
+        <p className="text-gray-600 text-xs">{message.length}/280</p>
+
         <button
           onClick={share}
           disabled={loading || (!message.trim() && attachments.length === 0)}
