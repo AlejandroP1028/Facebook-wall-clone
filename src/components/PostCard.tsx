@@ -27,8 +27,8 @@ export default function PostCard({ post }: { post: Post }) {
         </div>
       ) : null}
 
-      <div className="text-xs text-gray-500">
-        {post.timestamp.toLocaleString("en-US", {
+      <div className="text-xs text-gray-500 mb-3">
+        {new Date(post.created_at).toLocaleString("en-US", {
           month: "short",
           day: "numeric",
           hour: "numeric",
