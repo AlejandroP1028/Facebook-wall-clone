@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Post } from "@/types/post";
-import { motion } from "framer-motion";
-import { addPost } from "@/lib/supabase/posts"; // ✅ import helper
+
+import { addPost } from "@/lib/supabase/posts";
 
 interface Props {
   onPost: (p: Post) => void;
@@ -14,11 +14,6 @@ export default function PostInput({ onPost }: Props) {
   const [message, setMessage] = useState("");
   const [attachments, setAttachments] = useState<File[]>([]);
   const [loading, setLoading] = useState(false); // Optional loading state
-
-  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
-    setAttachments((prev) => [...prev, ...files]);
-  };
 
   const share = async () => {
     if (!message.trim()) return;
@@ -63,14 +58,14 @@ export default function PostInput({ onPost }: Props) {
       />
 
       {/* Attachments are stored but not sent yet */}
-      {attachments.length > 0 && (
+      {/* {attachments.length > 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="grid grid-cols-2 md:grid-cols-3 gap-2 mb-3"
         >
           {attachments.map((file, i) => (
-            <img
+            <Image
               key={i}
               src={URL.createObjectURL(file)}
               alt={file.name}
@@ -78,10 +73,10 @@ export default function PostInput({ onPost }: Props) {
             />
           ))}
         </motion.div>
-      )}
+      )} */}
 
       <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-        <label className="cursor-pointer text-[#3B5998] text-sm font-medium">
+        {/* <label className="cursor-pointer text-[#3B5998] text-sm font-medium">
           📷 Add Photos
           <input
             type="file"
@@ -89,7 +84,7 @@ export default function PostInput({ onPost }: Props) {
             onChange={handleFile}
             className="hidden"
           />
-        </label>
+        </label> */}
 
         <p className="text-gray-600 text-xs">{message.length}/280</p>
 

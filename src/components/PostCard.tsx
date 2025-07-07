@@ -1,5 +1,6 @@
 import { Post } from "@/types/post";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function PostCard({ post }: { post: Post }) {
   return (
@@ -17,7 +18,7 @@ export default function PostCard({ post }: { post: Post }) {
       {post.attachments?.length ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
           {post.attachments.map((f, i) => (
-            <img
+            <Image
               key={i}
               src={URL.createObjectURL(f)}
               alt={f.name}

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { supabase } from "@/lib/supabaseClient";
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const useRealtimePosts = (onNewPost: (post: any) => void) => {
   useEffect(() => {
     const channel = supabase
